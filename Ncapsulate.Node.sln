@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30324.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BA2706B9-61A8-4578-98E1-C13D5E859DF9}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ncapsulate.Node", "Ncapsulate.Node\Ncapsulate.Node.csproj", "{80BE1AFA-E505-4CC8-8687-0D35AA3B408B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{56AFEB65-4437-4CCE-82EE-BE805325F815}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C93A45A1-4E04-4E12-8655-FB4026D51E42}"
+	ProjectSection(SolutionItems) = preProject
+		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ncapsulate.Bower", "Ncapsulate.Bower\Ncapsulate.Bower.csproj", "{41CA5B76-056F-4AC4-A9CA-754BF3A43B84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ncapsulate.Karma", "Ncapsulate.Karma\Ncapsulate.Karma.csproj", "{B56BF340-DCED-471D-8464-B5B665660A01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ncapsulate.Gulp", "Ncapsulate.Gulp\Ncapsulate.Gulp.csproj", "{5B4AD8F0-4DA7-4741-8F30-C02A6D48BDD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ncapsulate.Grunt", "Ncapsulate.Grunt\Ncapsulate.Grunt.csproj", "{B05E1695-74B1-4381-AF15-3A95F1965087}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80BE1AFA-E505-4CC8-8687-0D35AA3B408B}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{80BE1AFA-E505-4CC8-8687-0D35AA3B408B}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{80BE1AFA-E505-4CC8-8687-0D35AA3B408B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80BE1AFA-E505-4CC8-8687-0D35AA3B408B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41CA5B76-056F-4AC4-A9CA-754BF3A43B84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41CA5B76-056F-4AC4-A9CA-754BF3A43B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41CA5B76-056F-4AC4-A9CA-754BF3A43B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41CA5B76-056F-4AC4-A9CA-754BF3A43B84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B56BF340-DCED-471D-8464-B5B665660A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56BF340-DCED-471D-8464-B5B665660A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56BF340-DCED-471D-8464-B5B665660A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56BF340-DCED-471D-8464-B5B665660A01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B4AD8F0-4DA7-4741-8F30-C02A6D48BDD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B4AD8F0-4DA7-4741-8F30-C02A6D48BDD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B4AD8F0-4DA7-4741-8F30-C02A6D48BDD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B4AD8F0-4DA7-4741-8F30-C02A6D48BDD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B05E1695-74B1-4381-AF15-3A95F1965087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B05E1695-74B1-4381-AF15-3A95F1965087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B05E1695-74B1-4381-AF15-3A95F1965087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B05E1695-74B1-4381-AF15-3A95F1965087}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

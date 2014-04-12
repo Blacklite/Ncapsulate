@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask AssemblyFile="bin\Ncapsulate.Bower.dll" TaskName="Ncapsulate.Bower.Tasks.InstallBower" />
+  <UsingTask AssemblyFile="bin\Ncapsulate.Bower.dll" TaskName="Ncapsulate.Bower.Tasks.GetBowerVersion" />
+  <Target Name="InstallNodeTaskRun" AfterTargets="AfterBuild">
+    <InstallBower />
+    <GetBowerVersion>
+      <Output TaskParameter="Version" ItemName="BowerVersion" />
+    </GetBowerVersion>
+  </Target>
+  <Target Name="BuildNugetPackage" AfterTargets="InstallNodeTaskRun">
+    <Exec Command="..\.nuget\NuGet.exe pack -NoDefaultExcludes -Properties Configuration=Release;BowerVersion=@(BowerVersion)"/>
+  </Target>
+</Project>

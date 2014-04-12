@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask AssemblyFile="bin\Ncapsulate.Gulp.dll" TaskName="Ncapsulate.Gulp.Tasks.InstallGulp" />
+  <UsingTask AssemblyFile="bin\Ncapsulate.Gulp.dll" TaskName="Ncapsulate.Gulp.Tasks.GetGulpVersion" />
+  <Target Name="InstallNodeTaskRun" AfterTargets="AfterBuild">
+    <InstallGulp />
+    <GetGulpVersion>
+      <Output TaskParameter="Version" ItemName="GulpVersion" />
+    </GetGulpVersion>
+  </Target>
+  <Target Name="BuildNugetPackage" AfterTargets="InstallNodeTaskRun">
+    <Exec Command="..\.nuget\NuGet.exe pack -NoDefaultExcludes -Properties Configuration=Release;GulpVersion=@(GulpVersion)"/>
+  </Target>
+</Project>

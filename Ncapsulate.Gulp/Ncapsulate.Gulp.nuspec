@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$gulpversion$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://blacklite.mit-license.org/</licenseUrl>
+    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>
+      First release packages a version of NodeJS for general use, and includes build targets that allow installing of node, npm packages, and npm package restore (npm install on the json file).
+    </releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <developmentDependency>true</developmentDependency>
+    <tags>nodejs node npm</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Microsoft.Build.Framework" />
+      <frameworkAssembly assemblyName="Microsoft.Build.Utilities.v4.0" />
+    </frameworkAssemblies>
+    <references>
+      <reference file="NCapsulate.Gulp.dll" />
+    </references>
+    <dependencies>
+      <dependency id="NCapsulate.Node" version="0.10" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="content\**\*.*" target="content" />
+    <file src="build\**\*.targets" target="build" />
+    <file src="build\**\*.props" target="build" />
+    <file src="nodejs\**\*" target="nodejs" />
+    <file src="tools\**\*.*" target="tools" />
+  </files>
+</package>
