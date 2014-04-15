@@ -54,16 +54,14 @@ namespace Ncapsulate.Grunt.Tasks
         /// </returns>
         public override bool Execute()
         {
-            var output = Task.WhenAll(
-                       ExecWithOutputResultAsync(@"cmd", String.Format(
-                            CultureInfo.InvariantCulture,
-                            @"/c {0}\grunt {1} {2}{3}{4}",
-                            this.NodeDirectory,
-                            this.Tasks ?? "default",
-                            this.GruntFile != null ? "--gruntfile " + this.GruntFile : String.Empty,
-                            this.Verbose ? "--verbose " : String.Empty,
-                            this.Force ? "--force" : String.Empty
-                        ))).Result.FirstOrDefault();
+            var cmd = String.Format(CultureInfo.InvariantCulture, @"/c {0}\gulp ", this.NodeDirectory);
+
+            cmd += this.Tasks ?? "default";
+            if (this.GruntFile != null) cmd += " --gruntfile " + this.GruntFile;
+            if (this.Verbose) cmd += " --verbose";
+            if (this.Force) cmd += " --force";
+
+            var output = Task.WhenAll(ExecWithOutputResultAsync(@"cmd", cmd)).Result.FirstOrDefault();
 
             if (output.StartsWith("ERROR"))
             {

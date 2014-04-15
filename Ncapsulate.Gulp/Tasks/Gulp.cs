@@ -29,6 +29,14 @@ namespace Ncapsulate.Gulp.Tasks
         public string Tasks { get; set; }
 
         /// <summary>
+        /// Gets or sets the tasks.
+        /// </summary>
+        /// <value>
+        /// The tasks.
+        /// </value>
+        public string Params { get; set; }
+
+        /// <summary>
         /// When overridden in a derived class, executes the task.
         /// </summary>
         /// <returns>
@@ -36,14 +44,13 @@ namespace Ncapsulate.Gulp.Tasks
         /// </returns>
         public override bool Execute()
         {
-            var output = Task.WhenAll(
-                       ExecWithOutputResultAsync(@"cmd", String.Format(
-                            CultureInfo.InvariantCulture,
-                            @"/c {0}\gulp {1} {2}",
-                            this.NodeDirectory,
-                            this.Tasks ?? "default",
-                            this.GulpFile != null ? "--gulpfile " + this.GulpFile : String.Empty
-                        ))).Result.FirstOrDefault();
+            var cmd = String.Format(CultureInfo.InvariantCulture, @"/c {0}\gulp ", this.NodeDirectory);
+
+            cmd += this.Tasks ?? "default";
+            if (this.GulpFile != null) cmd += " --gulpfile " + this.GulpFile;
+            if (this.Params != null) cmd += " " + this.Params;
+
+            var output = Task.WhenAll(ExecWithOutputResultAsync(@"cmd", cmd)).Result.FirstOrDefault();
 
             if (output.StartsWith("ERROR"))
             {
