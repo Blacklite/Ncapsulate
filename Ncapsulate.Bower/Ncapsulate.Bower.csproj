@@ -50,7 +50,7 @@
     <Compile Include="Tasks\BowerUpdate.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="build\net45\Ncapsulate.Bower.Build.targets">
+    <None Include="build\Ncapsulate.Bower.targets">
       <SubType>Designer</SubType>
     </None>
     <None Include="content\bower.cmd" />
@@ -61,6 +61,8 @@
     <None Include="BowerTaskTargets.targets">
       <SubType>Designer</SubType>
     </None>
+    <None Include="tools\commands.psm1" />
+    <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
     <None Include="tools\uninstall.ps1" />
   </ItemGroup>

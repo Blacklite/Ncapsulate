@@ -42,7 +42,7 @@ namespace Ncapsulate.Node.Tasks
                 return @"..\Ncapsulate.Node\nodejs";
             }
 
-            var directory = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent;
+            var directory = new DirectoryInfo(Directory.GetCurrentDirectory());
             var nodeCmd = directory.EnumerateFiles("node.cmd", SearchOption.TopDirectoryOnly).FirstOrDefault();
             if (nodeCmd != null) return @".";
 

@@ -54,12 +54,15 @@
     <None Include="GruntTaskTargets.targets">
       <SubType>Designer</SubType>
     </None>
-    <None Include="build\net45\Ncapsulate.Grunt.Build.targets">
+    <None Include="build\Ncapsulate.Grunt.targets">
       <SubType>Designer</SubType>
     </None>
     <None Include="content\grunt.cmd" />
     <None Include="Ncapsulate.Grunt.nuspec" />
+    <None Include="tools\commands.psm1" />
+    <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
+    <None Include="tools\uninstall.ps1" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

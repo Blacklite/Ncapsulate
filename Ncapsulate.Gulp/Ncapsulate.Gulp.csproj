@@ -40,7 +40,7 @@
     <Compile Include="Tasks\InstallGulp.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="build\net45\Ncapsulate.Gulp.Build.targets">
+    <None Include="build\Ncapsulate.Gulp.targets">
       <SubType>Designer</SubType>
     </None>
     <None Include="content\App_Build\gulp.targets">
@@ -51,7 +51,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Ncapsulate.Gulp.nuspec" />
+    <None Include="tools\commands.psm1" />
+    <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
+    <None Include="tools\uninstall.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Build.Framework" />

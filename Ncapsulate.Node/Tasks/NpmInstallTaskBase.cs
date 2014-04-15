@@ -100,14 +100,15 @@ namespace Ncapsulate.Node.Tasks
                 moduleName,
                 Global ? " -g" : String.Empty);
 
-            var output = await ExecWithOutputAsync(@"cmd", npmCommand);
+            var output = await ExecWithOutputResultAsync(@"cmd", npmCommand);
 
-            if (output != null)
+            if (output.StartsWith("ERROR"))
             {
                 Log.LogError("npm install " + moduleName + " error: " + output);
                 return ModuleInstallResult.Error;
             }
 
+            Log.LogMessage(MessageImportance.High, output);
             return ModuleInstallResult.Installed;
         }
 
@@ -126,14 +127,15 @@ namespace Ncapsulate.Node.Tasks
                 @"/c {0}\npm.cmd install",
                 NodeDirectory);
 
-            var output = await ExecWithOutputAsync(@"cmd", npmCommand);
+            var output = await ExecWithOutputResultAsync(@"cmd", npmCommand);
 
-            if (output != null)
+            if (output.StartsWith("ERROR"))
             {
                 Log.LogError("npm install error: " + output);
                 return ModuleInstallResult.Error;
             }
 
+            Log.LogMessage(MessageImportance.High, output);
             return ModuleInstallResult.Installed;
         }
 
@@ -152,25 +154,24 @@ namespace Ncapsulate.Node.Tasks
                 @"/c {0}\npm.cmd update",
                 NodeDirectory);
 
-            var output = await ExecWithOutputAsync(@"cmd", npmCommand);
+            var output = await ExecWithOutputResultAsync(@"cmd", npmCommand);
 
-            if (output != null)
+            if (output.StartsWith("ERROR"))
             {
                 Log.LogError("npm update error: " + output);
                 return ModuleInstallResult.Error;
             }
-
+            
+            Log.LogMessage(MessageImportance.High, output);
             return ModuleInstallResult.Installed;
         }
 
         private async Task<bool> FlattenModulesAsync()
         {
-            var nodeDirectory = NodeDirectory;
-
             var npmCommand = String.Format(
                 CultureInfo.InvariantCulture,
                 @"/c {0}\npm.cmd dedup{1}",
-                nodeDirectory,
+                NodeDirectory,
                 Global ? " -g" : String.Empty);
 
             var output = await ExecWithOutputAsync(@"cmd", npmCommand);
@@ -182,10 +183,10 @@ namespace Ncapsulate.Node.Tasks
                 return false;
             }
 
-            if (!Global)
-            {
-                FlattenNodeModules(@"node_modules");
-            }
+            //if (!Global && Directory.Exists(@"node_modules"))
+            //{
+            //    FlattenNodeModules(@"node_modules");
+            //}
 
             return true;
         }

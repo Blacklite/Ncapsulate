@@ -23,8 +23,9 @@ $nodeRelativePath\nodejs\node $bowerRelativePath\nodejs\node_modules\bower\bin\b
 $bowerLocation = ($projectDirectory + '\bower.cmd')
 Set-Content $bowerLocation $bowerCmd -Encoding String
 
+
 <# Install the build targets (so they can be configured beyond the defaults #>
-$buildProject = @([Microsoft.Build.Evaluation.ProjectCollection]::GlobalProjectCollection.GetLoadedProjects($projectPath))[0]
-$buildProject.Xml.AddImport("App_Build\bower.targets");
-$buildProject.Save();
+#$buildProject = @([Microsoft.Build.Evaluation.ProjectCollection]::GlobalProjectCollection.GetLoadedProjects($projectPath))[0]
+#$buildProject.Xml.AddImport("App_Build\bower.targets");
+##$buildProject.Save();
 

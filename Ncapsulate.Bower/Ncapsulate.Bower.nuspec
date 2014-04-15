@@ -7,7 +7,7 @@
     <authors>$author$</authors>
     <owners>$author$</owners>
     <licenseUrl>http://blacklite.mit-license.org/</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <projectUrl>https://github.com/Blacklite/NCapsulate</projectUrl>
     <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
@@ -21,14 +21,13 @@
       <frameworkAssembly assemblyName="Microsoft.Build.Framework" />
       <frameworkAssembly assemblyName="Microsoft.Build.Utilities.v4.0" />
     </frameworkAssemblies>
-    <references>
-      <reference file="NCapsulate.Bower.dll" />
-    </references>
 	<dependencies>
 	  <dependency id="NCapsulate.Node" version="0.10" />
 	</dependencies>
   </metadata>
   <files>
+    <file src="bin\NCapsulate.Node.dll" target="lib\net45" />
+    <file src="bin\NCapsulate.Bower.dll" target="lib\net45" />
     <file src="content\**\*.*" target="content" />
     <file src="build\**\*.targets" target="build" />
     <file src="build\**\*.props" target="build" />

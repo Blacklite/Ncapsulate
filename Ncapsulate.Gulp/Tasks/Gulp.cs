@@ -39,7 +39,7 @@ namespace Ncapsulate.Gulp.Tasks
             var output = Task.WhenAll(
                        ExecWithOutputResultAsync(@"cmd", String.Format(
                             CultureInfo.InvariantCulture,
-                            @"/c {0}\gulp {1} {2}{3}{4}",
+                            @"/c {0}\gulp {1} {2}",
                             this.NodeDirectory,
                             this.Tasks ?? "default",
                             this.GulpFile != null ? "--gulpfile " + this.GulpFile : String.Empty
@@ -51,6 +51,7 @@ namespace Ncapsulate.Gulp.Tasks
                 return false;
             }
 
+            Log.LogMessage(MessageImportance.High, output);
             return true;
         }
     }

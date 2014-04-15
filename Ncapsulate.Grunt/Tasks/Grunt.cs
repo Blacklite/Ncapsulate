@@ -71,6 +71,7 @@ namespace Ncapsulate.Grunt.Tasks
                 return false;
             }
 
+            Log.LogMessage(MessageImportance.High, output);
             return true;
         }
     }

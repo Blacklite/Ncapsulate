@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Target Name="Bower" BeforeTargets="BeforeBuild">
+  <!-- Support for Incremental builds -->
+  <!-- When bower.json is changed, we'll install and update, then update lastrun -->
+  <ItemGroup>
+    <BowerJson Include="$(MSBuildProjectDirectory)\bower.json" />
+    <BowerLastRun Include="$(MSBuildProjectDirectory)\bower_components\bower.lastrun" />
+  </ItemGroup>
+  <Target Name="Bower" BeforeTargets="BeforeBuild" Inputs="@(BowerJson)" Outputs="@(BowerLastRun)">
     <BowerInstall />
     <BowerUpdate />
+    <WriteLinesToFile File="$(MSBuildProjectDirectory)\bower_components\bower.lastrun" Lines="" />
   </Target>
 </Project>

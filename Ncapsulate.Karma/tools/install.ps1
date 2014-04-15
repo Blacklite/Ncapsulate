@@ -31,8 +31,6 @@ Set-Content $karmaLocation $karmaCmd -Encoding String
 
 
 <# Install the build targets (so they can be configured beyond the defaults #>
-[xml]$xml = Get-Content ($project.FullName);
-$import = $xml.CreateElement('Import');
-$import.SetAttribute("Project", "App_Build\karma.targets");
-$xml.AppendChild($xml);
-$xml.Save();
+#$buildProject = @([Microsoft.Build.Evaluation.ProjectCollection]::GlobalProjectCollection.GetLoadedProjects($projectPath))[0]
+#$buildProject.Xml.AddImport("App_Build\karma.targets");
+##$buildProject.Save();

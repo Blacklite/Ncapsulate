@@ -17,8 +17,6 @@ $relativePath\nodejs\node %*
 $nodeLocation = ($projectDirectory + '\node.cmd')
 Set-Content $nodeLocation $nodeCmd -Encoding String
 
-
-
 <# Install npm.cmd #>
 $npmCmd = "@echo off
 $relativePath\nodejs\npm %*
@@ -28,8 +26,6 @@ Set-Content $npmLocation $npmCmd -Encoding String
 
 
 <# Install the build targets (so they can be configured beyond the defaults #>
-[xml]$xml = Get-Content ($project.FullName);
-$import = $xml.CreateElement('Import');
-$import.SetAttribute("Project", "App_Build\node.targets");
-$xml.AppendChild($xml);
-$xml.Save();
+#$buildProject = @([Microsoft.Build.Evaluation.ProjectCollection]::GlobalProjectCollection.GetLoadedProjects($projectPath))[0]
+#$buildProject.Xml.AddImport("App_Build\node.targets");
+###$buildProject.Save();

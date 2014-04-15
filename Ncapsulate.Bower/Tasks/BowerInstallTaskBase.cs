@@ -8,6 +8,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,8 +45,6 @@ namespace Ncapsulate.Bower.Tasks
                     "Installed {0} modules.  Flattening...",
                     moduleResults.Count()));
 
-            if (!this.FlattenModulesAsync().Result) return false;
-
             return true;
         }
 
@@ -79,20 +78,23 @@ namespace Ncapsulate.Bower.Tasks
 
             var nodeDirectory = this.NodeDirectory;
 
+            this.Log.LogMessage(MessageImportance.High,  Directory.GetCurrentDirectory());
+
             var bowerCommand = String.Format(
                 CultureInfo.InvariantCulture,
                 @"/c {0}\bower install {1}{2}",
                 this.NodeDirectory, // We drop a cmd file that finds the correct node.exe, and also in the case of bower, finds the correct .bin\bower
                 moduleName);
 
-            var output = await ExecWithOutputAsync(@"cmd", bowerCommand);
+            var output = await ExecWithOutputResultAsync(@"cmd", bowerCommand);
 
-            if (output != null)
+            if (output.StartsWith("ERROR"))
             {
                 this.Log.LogError("bower install " + moduleName + " error: " + output);
                 return ModuleInstallResult.Error;
             }
 
+            Log.LogMessage(MessageImportance.High, output);
             return ModuleInstallResult.Installed;
         }
 
@@ -106,19 +108,22 @@ namespace Ncapsulate.Bower.Tasks
 
             var nodeDirectory = this.NodeDirectory;
 
+            this.Log.LogMessage(MessageImportance.High, Directory.GetCurrentDirectory());
+
             var bowerCommand = String.Format(
                 CultureInfo.InvariantCulture,
                 @"/c {0}\bower.cmd install",
                 this.NodeDirectory);
 
-            var output = await ExecWithOutputAsync(@"cmd", bowerCommand);
+            var output = await ExecWithOutputResultAsync(@"cmd", bowerCommand);
 
-            if (output != null)
+            if (output.StartsWith("ERROR"))
             {
                 this.Log.LogError("bower install error: " + output);
                 return ModuleInstallResult.Error;
             }
 
+            Log.LogMessage(MessageImportance.High, output);
             return ModuleInstallResult.Installed;
         }
 
@@ -137,36 +142,16 @@ namespace Ncapsulate.Bower.Tasks
                 @"/c {0}\bower.cmd update",
                 NodeDirectory);
 
-            var output = await ExecWithOutputAsync(@"cmd", bowerCommand);
+            var output = await ExecWithOutputResultAsync(@"cmd", bowerCommand);
 
-            if (output != null)
+            if (output.StartsWith("ERROR"))
             {
                 Log.LogError("bower update error: " + output);
                 return ModuleInstallResult.Error;
             }
 
+            Log.LogMessage(MessageImportance.High, output);
             return ModuleInstallResult.Installed;
-        }
-
-        private async Task<bool> FlattenModulesAsync()
-        {
-            var nodeDirectory = this.NodeDirectory;
-
-            var bowerCommand = String.Format(
-                CultureInfo.InvariantCulture,
-                @"/c {0}\bower.cmd dedup{1}",
-                nodeDirectory);
-
-            var output = await ExecWithOutputAsync(@"cmd", bowerCommand);
-
-            if (output != null)
-            {
-                this.Log.LogError("bower dedup error: " + output);
-
-                return false;
-            }
-
-            return true;
         }
     }
 }

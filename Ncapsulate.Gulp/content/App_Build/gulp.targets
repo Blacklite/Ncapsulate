@@ -1,5 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Target Name="Gulp">
+  <!-- Examples of using Gulp at different phases of your build process -->
+  <!--
+  <Target Name="Gulp-BeforeBuild" BeforeTargets="BeforeBuild;Bower;Npm">
+    <Gulp Tasks="copy-lib-to-build" />
   </Target>
+  -->
+  <!--
+  <Target Name="Gulp-BeforeCompile" BeforeTargets="BeforeCompile">
+    <Gulp Tasks="compile-js compile-css" />
+  </Target>
+  -->
+  <!--
+  <Target Name="Gulp-AfterCompile" AfterTargets="AfterCompile">
+    <Gulp Tasks="concat-js concat-css" />
+  </Target>
+  -->
+  <!--
+  <Target Name="Gulp-AfterBuild" AfterTargets="AfterBuild">
+    <Gulp Tasks="after-build-cleanup" />
+  </Target>
+  -->
+  <!--
+  <Target Name="Gulp-BeforeClean" BeforeTargets="BeforeClean">
+  </Target>
+  -->
+  <!--
+  <Target Name="Gulp-AfterClean" AfterTargets="AfterClean">
+    <Gulp Tasks="clear-cache-directories" />
+  </Target>
+  -->
+  <!--
+  <Target Name="Gulp-BeforeRebuild" BeforeTargets="BeforeRebuild">
+  </Target>
+  -->
+  <!--
+  <Target Name="Gulp-AfterRebuild" AfterTargets="AfterRebuild">
+    <Gulp Tasks="clear-compiled-js clear-compiled-css" />
+  </Target>
+  -->
+  <!-- You can use item groups to get incremental builds, these item groups need to be customized to meet your needs -->
+  <!--<ItemGroup>
+    <RequireJsInput Include="$(MSBuildProjectDirectory)\Scripts\app\**\*.js" />
+    <RequireJsBuild Include="$(MSBuildProjectDirectory)\Scripts\build\app.js" />
+    <RequireJsBuildMin Include="$(MSBuildProjectDirectory)\Scripts\build\app.min.js" />
+  </ItemGroup>
+  <Target Name="Gulp-BeforeBuild" BeforeTargets="BeforeBuild;Bower;Npm" Inputs="@(RequireJsInput)" Outputs="@(RequireJsBuild)">
+    <Gulp Tasks="requirejs" />
+  </Target>
+  <Target Name="Gulp-Min" AfterTargets="Gulp-BeforeBuild" Inputs="@(RequireJsBuild)" Outputs="@(RequireJsBuildMin)">
+    <Gulp Tasks="min" />
+  </Target>-->
 </Project>
