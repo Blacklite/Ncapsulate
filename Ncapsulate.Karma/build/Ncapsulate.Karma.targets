@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask AssemblyFile="..\lib\net45\Ncapsulate.Karma.dll" TaskName="Ncapsulate.Karma.Tasks.Karma" />
+  <Import Project="$(MSBuildProjectDirectory)\App_Build\karma.targets" Condition="Exists('$(MSBuildProjectDirectory)\App_Build\karma.targets')" />
+</Project>

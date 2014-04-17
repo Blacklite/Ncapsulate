@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask AssemblyFile="..\lib\net45\Ncapsulate.Gulp.dll" TaskName="Ncapsulate.Gulp.Tasks.Gulp" />
+  <Import Project="$(MSBuildProjectDirectory)\App_Build\gulp.targets"  Condition="Exists('$(MSBuildProjectDirectory)\App_Build\gulp.targets')"/>
+</Project>
