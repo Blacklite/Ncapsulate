@@ -157,3 +157,4 @@ $RECYCLE.BIN/
 */nodejs/*
 node_modules/
 *.nupkg
+!*/build/
