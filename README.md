@@ -18,3 +18,6 @@ the front end world.  While giving the Front End Developers the ability to
 adopt modern tools, and processes to create exceptional User Experiences.
 
 
+### Logo
+Logo was found via Google image search, and is used under the appropriate creative commons license.
+http://pencilshade.deviantart.com/art/New-worksafety-gasmask-symbol-87581552

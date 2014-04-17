@@ -39,7 +39,7 @@ namespace Ncapsulate.Karma.Tasks
         /// <exception cref="System.NotImplementedException"></exception>
         public override bool Execute()
         {
-            var cmd = String.Format(CultureInfo.InvariantCulture, @"/c {0}\karma start", this.NodeDirectory);
+            var cmd = String.Format(CultureInfo.InvariantCulture, @"/c {0}\karma start --single-run", this.NodeDirectory);
 
             if (this.ConfigFile != null) cmd += " " + this.ConfigFile;
             if (this.Port > 0) cmd += " --port " + this.Port;
