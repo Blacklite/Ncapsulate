@@ -9,6 +9,10 @@
   <Target Name="Bower" BeforeTargets="BeforeBuild" Inputs="@(BowerJson)" Outputs="@(BowerLastRun)">
     <BowerInstall />
     <BowerUpdate />
+    <Delete Files="$(MSBuildProjectDirectory)\bower_components\bower.lastrun" />
     <WriteLinesToFile File="$(MSBuildProjectDirectory)\bower_components\bower.lastrun" Lines="" />
+  </Target>
+  <Target Name="BowerClean" BeforeTargets="BeforeClean">
+    <Delete Files="$(MSBuildProjectDirectory)\bower_components\bower.lastrun" />
   </Target>
 </Project>

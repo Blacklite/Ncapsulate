@@ -9,6 +9,10 @@
   <Target Name="Npm" BeforeTargets="BeforeBuild" Inputs="@(NpmJson)" Outputs="@(NpmLastRun)">
     <NpmInstall />
     <NpmUpdate />
+    <Delete Files="$(MSBuildProjectDirectory)\node_modules\npm.lastrun" />
     <WriteLinesToFile File="$(MSBuildProjectDirectory)\node_modules\npm.lastrun" Lines="" />
+  </Target>
+  <Target Name="NpmClean" BeforeTargets="BeforeClean">
+    <Delete Files="$(MSBuildProjectDirectory)\node_modules\npm.lastrun" />
   </Target>
 </Project>

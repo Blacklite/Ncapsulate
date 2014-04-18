@@ -54,7 +54,7 @@ namespace Ncapsulate.Grunt.Tasks
         /// </returns>
         public override bool Execute()
         {
-            var cmd = String.Format(CultureInfo.InvariantCulture, @"/c {0}\gulp ", this.NodeDirectory);
+            var cmd = String.Format(CultureInfo.InvariantCulture, @"/c {0}\grunt ", this.NodeDirectory);
 
             cmd += this.Tasks ?? "default";
             if (this.GruntFile != null) cmd += " --gruntfile " + this.GruntFile;
