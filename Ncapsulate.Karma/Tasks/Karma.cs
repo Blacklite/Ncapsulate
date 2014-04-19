@@ -16,18 +16,60 @@ namespace Ncapsulate.Karma.Tasks
     /// </summary>
     public class Karma : NcapsulateTask
     {
+        /// <summary>
+        /// Gets or sets the configuration file.
+        /// </summary>
+        /// <value>
+        /// The configuration file.
+        /// </value>
         public string ConfigFile { get; set; }
 
+        /// <summary>
+        /// Gets or sets the port.
+        /// </summary>
+        /// <value>
+        /// The port.
+        /// </value>
         public int Port { get; set; }
 
+        /// <summary>
+        /// Gets or sets the log level.
+        /// </summary>
+        /// <value>
+        /// The log level.
+        /// </value>
         public string LogLevel { get; set; }
 
+        /// <summary>
+        /// Gets or sets the reporters.
+        /// </summary>
+        /// <value>
+        /// The reporters.
+        /// </value>
         public string Reporters { get; set; }
 
+        /// <summary>
+        /// Gets or sets the browsers.
+        /// </summary>
+        /// <value>
+        /// The browsers.
+        /// </value>
         public string Browsers { get; set; }
 
+        /// <summary>
+        /// Gets or sets the capture timeout.
+        /// </summary>
+        /// <value>
+        /// The capture timeout.
+        /// </value>
         public int CaptureTimeout { get; set; }
 
+        /// <summary>
+        /// Gets or sets the report slower than.
+        /// </summary>
+        /// <value>
+        /// The report slower than.
+        /// </value>
         public int ReportSlowerThan { get; set; }
 
         /// <summary>
