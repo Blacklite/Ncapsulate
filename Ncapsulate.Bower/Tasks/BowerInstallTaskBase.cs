@@ -22,7 +22,7 @@ namespace Ncapsulate.Bower.Tasks
     /// <summary>
     /// This is not compiled (ItemType=None) but is invoked by the Inline Task (http://msdn.microsoft.com/en-us/library/dd722601) in the csproj file.
     /// </summary>
-    public abstract class BowerInstallTaskBase : NCapsulateTask
+    public abstract class BowerInstallTaskBase : NcapsulateTask
     {
         /// <summary>
         /// When overridden in a derived class, executes the task.

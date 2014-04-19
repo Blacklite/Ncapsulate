@@ -12,7 +12,7 @@ using Ncapsulate.Node.Tasks;
 
 namespace Ncapsulate.Gulp.Tasks
 {
-    public class Gulp : NCapsulateTask
+    public class Gulp : NcapsulateTask
     {
         /// <summary>
         /// Gets or sets the gulp file.

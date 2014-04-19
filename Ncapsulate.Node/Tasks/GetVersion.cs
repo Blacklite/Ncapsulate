@@ -16,7 +16,7 @@ using Microsoft.Build.Framework;
 
 namespace Ncapsulate.Node.Tasks
 {
-    public class GetVersion : NCapsulateTask
+    public class GetVersion : NcapsulateTask
     {
         /// <summary>
         /// Gets or sets the name to get the version for.

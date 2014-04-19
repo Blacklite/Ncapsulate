@@ -37,7 +37,7 @@ namespace Ncapsulate.Node.Tasks
             // We install our modules in this subdirectory so that
             // we can clean up their dependencies without catching
             // npm's modules, which we don't want.
-            File.WriteAllText(@"nodejs\tools\package.json", @"{""name"":""NCapsulate.Node""}");
+            File.WriteAllText(@"nodejs\tools\package.json", @"{""name"":""Ncapsulate.Node""}");
 
             // Since this is a synchronous job, I have
             // no choice but to synchronously wait for

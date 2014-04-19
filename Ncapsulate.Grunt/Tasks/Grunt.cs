@@ -12,7 +12,7 @@ using Ncapsulate.Node.Tasks;
 
 namespace Ncapsulate.Grunt.Tasks
 {
-    public class Grunt : NCapsulateTask
+    public class Grunt : NcapsulateTask
     {
         /// <summary>
         /// Gets or sets the grunt file.

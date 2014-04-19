@@ -11,7 +11,7 @@ namespace Ncapsulate.Node.Tasks
     /// <summary>
     /// 
     /// </summary>
-    public abstract class NCapsulateTask : CmdTask
+    public abstract class NcapsulateTask : CmdTask
     {
         /// <summary>
         /// Gets the node directory.

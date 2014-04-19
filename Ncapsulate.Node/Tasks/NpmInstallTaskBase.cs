@@ -19,7 +19,7 @@ namespace Ncapsulate.Node.Tasks
     /// <summary>
     /// This is not compiled (ItemType=None) but is invoked by the Inline Task (http://msdn.microsoft.com/en-us/library/dd722601) in the csproj file.
     /// </summary>
-    public abstract class NpmInstallTaskBase : NCapsulateTask
+    public abstract class NpmInstallTaskBase : NcapsulateTask
     {
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="NpmInstall"/> is global.

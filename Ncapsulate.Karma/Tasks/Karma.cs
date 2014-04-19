@@ -14,7 +14,7 @@ namespace Ncapsulate.Karma.Tasks
     /// <summary>
     /// 
     /// </summary>
-    public class Karma : NCapsulateTask
+    public class Karma : NcapsulateTask
     {
         public string ConfigFile { get; set; }
 

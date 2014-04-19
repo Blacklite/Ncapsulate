@@ -11,7 +11,7 @@ using Microsoft.Build.Framework;
 
 namespace Ncapsulate.Node.Tasks
 {
-    class GetNpmVersion : NCapsulateTask
+    class GetNpmVersion : NcapsulateTask
     {
         /// <summary>
         /// Gets or sets the version.
