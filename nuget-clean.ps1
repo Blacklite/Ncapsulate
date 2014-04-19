@@ -1,1 +1,1 @@
-Get-ChildItem -Recurse NCapsulate*\*.nupkg.nupkg | Remove-Item
+Get-ChildItem -Recurse NCapsulate*\*.nupkg | Remove-Item
