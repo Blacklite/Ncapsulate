@@ -43,8 +43,6 @@
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tasks\GetBowerVersion.cs" />
-    <Compile Include="Tasks\InstallBower.cs" />
     <Compile Include="Tasks\BowerInstall.cs" />
     <Compile Include="Tasks\BowerInstallTaskBase.cs" />
     <Compile Include="Tasks\BowerUpdate.cs" />

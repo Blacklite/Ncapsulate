@@ -44,8 +44,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tasks\Grunt.cs" />
-    <Compile Include="Tasks\GetGruntVersion.cs" />
-    <Compile Include="Tasks\InstallGrunt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="content\App_Build\grunt.targets">

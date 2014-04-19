@@ -1,39 +1,36 @@
-﻿/***
- * These tasks are based on code used by the wonderful Web Essentials Extension.
- * No ownership is claimed, the relivante pieces of code are to be associated with the Web Essentials Extension.
- * https://raw.githubusercontent.com/madskristensen/WebEssentials2013/master/LICENSE.txt
- ***/
-
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Ncapsulate.Node.Tasks;
+using Microsoft.Build.Framework;
 
-namespace Ncapsulate.Bower.Tasks
+namespace Ncapsulate.Node.Tasks
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class InstallBower : CmdTask
+    public class InstallModule : CmdTask
     {
+        /// <summary>
+        /// Gets or sets the modules.
+        /// Each module is seperated by a space (much like npm install)
+        /// </summary>
+        /// <value>
+        /// The modules.
+        /// </value>
+        [Required]
+        public string Modules { get; set; }
+
         public override bool Execute()
         {
             if (Directory.Exists(@"nodejs\node_modules"))
                 Directory.Delete(@"nodejs\node_modules", true);
             Directory.CreateDirectory(@"nodejs");
-            // Force bower to install modules to the subdirectory
-            // https://bowerjs.org/doc/files/bower-folders.html#More-Information
 
             // We install our modules in this subdirectory so that
             // we can clean up their dependencies without catching
             // bower's modules, which we don't want.
-            File.WriteAllText(@"nodejs\package.json", @"{""name"":""NCapsulate.Bower""}");
+            File.WriteAllText(@"nodejs\package.json", @"{}");
 
             // Since this is a synchronous job, I have
             // no choice but to synchronously wait for
@@ -41,20 +38,20 @@ namespace Ncapsulate.Bower.Tasks
             // still saves threads.
 
             Task.WaitAll(
-                this.DownloadBowerAsync()
+                this.InstallModulesAsync()
             );
 
             return true;
         }
 
-        private async Task DownloadBowerAsync()
+        private async Task InstallModulesAsync()
         {
-            var output = await ExecWithOutputAsync(@"cmd", @"/c ..\..\Ncapsulate.Node\nodejs\npm.cmd install bower", @"nodejs");
+            var output = await ExecWithOutputAsync(@"cmd", @"/c ..\..\Ncapsulate.Node\nodejs\npm.cmd install " + this.Modules, @"nodejs");
 
             if (output != null)
             {
-                this.Log.LogError("npm install bower error: " + output);
-                throw new Exception("npm install bower error");
+                this.Log.LogError("npm install " + this.Modules + " error: " + output);
+                throw new Exception("npm install " + this.Modules + " error");
             }
 
             output = await ExecWithOutputAsync(@"cmd", @"/c ..\..\Ncapsulate.Node\nodejs\npm.cmd dedup", @"nodejs");

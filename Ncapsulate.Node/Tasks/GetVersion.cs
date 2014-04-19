@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,12 +8,19 @@ using System.Web.Helpers;
 
 using Microsoft.Build.Framework;
 
-using Ncapsulate.Node.Tasks;
-
-namespace Ncapsulate.Gulp.Tasks
+namespace Ncapsulate.Node.Tasks
 {
-    public class GetGulpVersion : NCapsulateTask
+    public class GetVersion : NCapsulateTask
     {
+        /// <summary>
+        /// Gets or sets the name to get the version for.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        [Required]
+        public string Name { get; set; }
+
         /// <summary>
         /// Gets or sets the version.
         /// </summary>
@@ -33,10 +38,10 @@ namespace Ncapsulate.Gulp.Tasks
         /// </returns>
         public override bool Execute()
         {
-            var json = Json.Decode(File.ReadAllText(@".\nodejs\node_modules\gulp\package.json"));
+            var json = Json.Decode(File.ReadAllText(@".\nodejs\node_modules\" + Name + @"\package.json"));
             var version = json.version;
 
-            this.Log.LogMessage(MessageImportance.High, "gulp Version: ", version);
+            this.Log.LogMessage(MessageImportance.High, Name + @" version: ", version);
 
             this.Version = version;
             return true;

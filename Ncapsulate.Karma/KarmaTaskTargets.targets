@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <UsingTask AssemblyFile="bin\Ncapsulate.Karma.dll" TaskName="Ncapsulate.Karma.Tasks.InstallKarma" />
-  <UsingTask AssemblyFile="bin\Ncapsulate.Karma.dll" TaskName="Ncapsulate.Karma.Tasks.GetKarmaVersion" />
+  <UsingTask AssemblyFile="bin\Ncapsulate.Node.dll" TaskName="Ncapsulate.Node.Tasks.InstallModule" />
+  <UsingTask AssemblyFile="bin\Ncapsulate.Node.dll" TaskName="Ncapsulate.Node.Tasks.GetVersion" />
   <Target Name="InstallNodeTaskRun" AfterTargets="AfterBuild">
-    <InstallKarma />
-    <GetKarmaVersion>
+    <InstallModule Modules="karma-cli karma" />
+    <GetVersion Name="karma">
       <Output TaskParameter="Version" ItemName="KarmaVersion" />
-    </GetKarmaVersion>
+    </GetVersion>
   </Target>
   <Target Name="BuildNugetPackage" AfterTargets="InstallNodeTaskRun">
     <Exec Command="..\.nuget\NuGet.exe pack -NoDefaultExcludes -Properties Configuration=Release;KarmaVersion=@(KarmaVersion)"/>

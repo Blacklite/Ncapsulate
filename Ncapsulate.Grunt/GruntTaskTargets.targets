@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <UsingTask AssemblyFile="bin\Ncapsulate.Grunt.dll" TaskName="Ncapsulate.Grunt.Tasks.InstallGrunt" />
-  <UsingTask AssemblyFile="bin\Ncapsulate.Grunt.dll" TaskName="Ncapsulate.Grunt.Tasks.GetGruntVersion" />
+  <UsingTask AssemblyFile="bin\Ncapsulate.Node.dll" TaskName="Ncapsulate.Node.Tasks.InstallModule" />
+  <UsingTask AssemblyFile="bin\Ncapsulate.Node.dll" TaskName="Ncapsulate.Node.Tasks.GetVersion" />
   <Target Name="InstallNodeTaskRun" AfterTargets="AfterBuild">
-    <InstallGrunt />
-    <GetGruntVersion>
+    <InstallModule Modules="grunt-cli grunt" />
+    <GetVersion Name="grunt">
       <Output TaskParameter="Version" ItemName="GruntVersion" />
-    </GetGruntVersion>
+    </GetVersion>
   </Target>
   <Target Name="BuildNugetPackage" AfterTargets="InstallNodeTaskRun">
     <Exec Command="..\.nuget\NuGet.exe pack -NoDefaultExcludes -Properties Configuration=Release;GruntVersion=@(GruntVersion)"/>
