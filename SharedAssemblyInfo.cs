@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyCompany("David Driscoll (for Blacklite Consulting)")]
+[assembly: AssemblyCompany("David Driscoll")]
 [assembly: AssemblyDescription("A packaged version of bower js for use with NuGet.  That allows developers to utilize node as per normal, through the Package Manager Console, and in addition exposes MSBuild targets that can be used to install node locally in the project, install specific dependencies, etc.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
