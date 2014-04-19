@@ -34,6 +34,33 @@ JavaScript projects to only impose a 1 build slow down on Back-end developers
 that may not do any work in the JavaScript space.
 
 
+# Installing
+
+### Visual Studio
+Search for `Ncapsulate.Node` in the Nuget Package Manager 
+
+### Package Manager Console
+`Install-Package Ncapsulate.Node`
+
+### Configuration
+Once installed you will have 3 new items in your solution.
+
+#### CMD files
+`node.cmd` and `npm.cmd` are shortcuts to run those commands from the command line without
+having to install node locally for a developer.  These can be "excluded" from
+the project if you do not want the clutter, but they __must be committed to source
+control__, so that they exist for the tooling to work correctly.
+
+#### Targets
+You will also have a new folder `App_Build`, this folder will contain `.targets` files
+for each dependnency you have installed.  These can be removed safely if you do not need them.
+
+Targets are very useful though, these allow you to change the your projects build without needing
+to manually edit the project xml, which forces you to unload the project.  In these targets files
+we have some examples of using Inputs/Outputs to create incremental builds that only change
+as dependent files change.
+
+
 # Ncapsulate.Node
 This is the primary package, and it includes both Node and Npm since they are
 generally both required for anything else to work.
