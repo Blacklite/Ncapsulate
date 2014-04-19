@@ -44,12 +44,16 @@
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskHelpers.cs" />
     <Compile Include="Tasks\CmdTask.cs" />
     <Compile Include="Tasks\GetNodeVersion.cs" />
     <Compile Include="Tasks\GetNpmVersion.cs" />

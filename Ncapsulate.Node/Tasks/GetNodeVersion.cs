@@ -43,9 +43,13 @@ namespace Ncapsulate.Node.Tasks
                 return false;
             }
 
+            var version = output.TrimStart('v');
+            var nugetVersion = Task.WhenAll(TaskHelpers.GetNugetVersion("node")).Result.FirstOrDefault();
+            version = TaskHelpers.GetNextVersion(version, nugetVersion);
+
             Log.LogMessage(MessageImportance.High, "Node Version: ", output);
 
-            Version = output.TrimStart('v');
+            Version = version;
             return true;
         }
     }

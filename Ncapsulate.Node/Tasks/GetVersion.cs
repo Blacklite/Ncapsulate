@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Runtime.Remoting.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Helpers;
+using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Serialization;
+using System.Xml.XPath;
 
 using Microsoft.Build.Framework;
 
@@ -39,7 +45,13 @@ namespace Ncapsulate.Node.Tasks
         public override bool Execute()
         {
             var json = Json.Decode(File.ReadAllText(@".\nodejs\node_modules\" + Name + @"\package.json"));
-            var version = json.version;
+            string version = json.version;
+
+            // Allow for subversions, it's possible we want to implement a new feature, task, or fix
+            //    and the library (node, npm, bower, etc) has not be reved since the last push.
+            // This allows us to keep our version consistent with the current release of the tool we're wrapping.
+            var nugetVersion = Task.WhenAll(TaskHelpers.GetNugetVersion(Name)).Result.FirstOrDefault();
+            version = TaskHelpers.GetNextVersion(version, nugetVersion);
 
             this.Log.LogMessage(MessageImportance.High, Name + @" version: ", version);
 
