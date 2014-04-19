@@ -159,3 +159,4 @@ node_modules/
 *.nupkg
 !*/build/
 /packages
+/api.key
