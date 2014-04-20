@@ -1,7 +1,8 @@
 Ncapsulate
 ==========
+![Ncapsulate](logo.png)
 
-NuGet and MSBuild wrappers around various Node based tools.
+Ncapsulate is a NuGet wrapper for NodeJS and libraries of the Node Ecosystem.  Such tools currently include Bower, Gulp, Grunt, Npm, Karma, and support is easy to add for more.
 
 
 
