@@ -62,6 +62,7 @@ as dependent files change.
 
 
 # Ncapsulate.Node
+![Ncapsulate Node](Ncapsulate.Node/ncapsulate-node.png)
 This is the primary package, and it includes both Node and Npm since they are
 generally both required for anything else to work.
 
