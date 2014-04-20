@@ -62,7 +62,7 @@ as dependent files change.
 
 
 # Ncapsulate.Node
-<img src="Ncapsulate.Node/ncapsulate-node.png" alt="Ncapsulate Node" style="max-width:100%;float: right;">
+![Ncapsulate Node](Ncapsulate.Node/ncapsulate-node.png)
 
 This is the primary package, and it includes both Node and Npm since they are
 generally both required for anything else to work.
@@ -95,7 +95,7 @@ for example you do not want to use package.json for keeping node packages.
 
 
 # Ncapsulate.Bower
-<img src="Ncapsulate.Bower/ncapsulate-bower.png" alt="Ncapsulate Node" style="max-width:100%;float: right;">
+![Ncapsulate Bower](Ncapsulate.Bower/ncapsulate-bower.png)
 
 This is a package that brings in bower integration to Ncapsulate.
 
@@ -121,7 +121,8 @@ for example do not want to use a bower.json file for keeping bower dependencies.
 ```
 
 # Ncapsulate.Grunt
-<img src="Ncapsulate.Grunt/ncapsulate-grunt.png" alt="Ncapsulate Node" style="max-width:100%;float: right;">
+![Ncapsulate Grunt](Ncapsulate.Grunt/ncapsulate-grunt.png)
+
 This is a package that brings in grunt integration to Ncapsulate.
 
 ## Tasks 
@@ -139,7 +140,8 @@ as set Force and Verbose for additional needs.
 ```
 
 # Ncapsulate.Gulp
-<img src="Ncapsulate.Gulp/ncapsulate-gulp.png" alt="Ncapsulate Node" style="max-width:100%;float: right;">
+![Ncapsulate Gulp](Ncapsulate.Gulp/ncapsulate-gulp.png)
+
 This is a package that brings in gulp integration to Ncapsulate.
 
 ## Tasks 
@@ -160,7 +162,8 @@ have different builds for Release or Debug.
 
 
 # Ncapsulate.Karma
-<img src="Ncapsulate.Karma/ncapsulate-karma.png" alt="Ncapsulate Node" style="max-width:100%;float: right;">
+![Ncapsulate Karma](Ncapsulate.Karma/ncapsulate-karma.png)
+
 This is a package that brings in karma integration to Ncapsulate.
 
 ## Tasks 

@@ -34,7 +34,7 @@ namespace Ncapsulate.Node
 
         public static string GetNextVersion(string version, string nugetVersion)
         {
-            if (nugetVersion != null && version.StartsWith(nugetVersion))
+            if (nugetVersion != null && nugetVersion.StartsWith(version))
             {
                 if (nugetVersion.Trim() == version.Trim())
                 {
