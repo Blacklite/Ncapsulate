@@ -217,7 +217,3 @@ Any additional help would be great, I welcome any pull requests to add new depen
 that you feel might be benefical.  Once we execeed 10 or so npm packages I would like break
 each project out into seperate git repo's to increase seperation.
 
-
-### Logo
-Logo was found via Google image search, and is used under the appropriate creative commons license.
-http://pencilshade.deviantart.com/art/New-worksafety-gasmask-symbol-87581552
