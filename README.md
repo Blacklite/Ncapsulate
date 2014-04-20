@@ -1,6 +1,6 @@
 Ncapsulate
 ==========
-![Ncapsulate](logo.png)
+![Ncapsulate](logo-large.png)
 
 Ncapsulate is a NuGet wrapper for NodeJS and libraries of the Node Ecosystem.  Such tools currently include Bower, Gulp, Grunt, Npm, Karma, and support is easy to add for more.
 
@@ -33,6 +33,18 @@ tools is extremely easy, and allows you to follow other build patterns, such
 as incremental builds, so tasks only run if they are needed.  This allows
 JavaScript projects to only impose a 1 build slow down on Back-end developers
 that may not do any work in the JavaScript space.
+
+
+Example
+-------
+There is an example solution that uses Ncapsulate.  This example takes the latest SPA template from Visual Studio and converts it to using Ncapsualte for a few tasks.
+
+1. Dependencies are installed using Npm and Bower
+2. It is built with RequireJS
+3. Unit tests are run through Karma
+4. Demonstrates both Gulp and Grunt, keep in mind in most cases you'll either pick Grunt or Gulp, not both!
+
+https://github.com/Blacklite/Ncapsulate.Example
 
 
 # Installing
