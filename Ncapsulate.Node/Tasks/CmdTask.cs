@@ -125,7 +125,7 @@ namespace Ncapsulate.Node.Tasks
                 {
                     module.MoveTo(targetDir);
                 }
-                else if (module.Name != ".bin")
+                else if (module.Name != "mout" && module.Name != ".bin")
                 {
                     var targetPackage = targetInfo.EnumerateFiles("package.json").FirstOrDefault();
                     var modulePackage = module.EnumerateFiles("package.json").FirstOrDefault();
@@ -185,7 +185,7 @@ namespace Ncapsulate.Node.Tasks
                             binFile.CopyTo(targetBin, true);
                         }
                     }
-                    else
+                    else if (module.Name != "mout")
                     {
                         Directory.Delete(module.FullName, true);
                         this.Log.LogMessage(MessageImportance.High, "Deleting existing module " + module.Name);
