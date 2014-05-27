@@ -11,7 +11,7 @@ $bowerRelativePath = Resolve-Path -Relative $installPath
 Set-Location $tmp
 
 <# Find the relative location the Ncapsulate.Node #>
-$nodePath = (Get-ChildItem "$installPath\..\Ncapsulate.Node.*" | Sort-Object Name -descending)[0].FullName;
+$nodePath = (Get-ChildItem "$installPath\..\Ncapsulate.Node.*" | Sort-Object Name -descending).FullName;
 Set-Location $projectDirectory
 $nodeRelativePath = Resolve-Path -Relative $nodePath
 Set-Location $tmp
