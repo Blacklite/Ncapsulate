@@ -55,14 +55,15 @@
     <None Include="build\Ncapsulate.Grunt.targets">
       <SubType>Designer</SubType>
     </None>
-    <None Include="content\grunt.cmd" />
     <None Include="Ncapsulate.Grunt.nuspec" />
     <None Include="tools\commands.psm1" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
     <None Include="tools\uninstall.ps1" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="readme.txt" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ncapsulate.Node\Ncapsulate.Node.csproj">
       <Project>{80BE1AFA-E505-4CC8-8687-0D35AA3B408B}</Project>

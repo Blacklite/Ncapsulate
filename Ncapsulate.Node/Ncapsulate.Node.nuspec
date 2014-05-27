@@ -33,5 +33,6 @@
     <file src="build\**\*.props" target="build" />
     <file src="nodejs\**\*" target="nodejs" />
     <file src="tools\**\*.*" target="tools" />
+    <file src="readme.txt" />
   </files>
 </package>

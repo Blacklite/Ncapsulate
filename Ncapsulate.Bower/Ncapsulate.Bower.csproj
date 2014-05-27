@@ -51,7 +51,6 @@
     <None Include="build\Ncapsulate.Bower.targets">
       <SubType>Designer</SubType>
     </None>
-    <None Include="content\bower.cmd" />
     <None Include="content\App_Build\bower.targets">
       <SubType>Designer</SubType>
     </None>
@@ -69,6 +68,9 @@
       <Project>{80be1afa-e505-4cc8-8687-0d35aa3b408b}</Project>
       <Name>Ncapsulate.Node</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

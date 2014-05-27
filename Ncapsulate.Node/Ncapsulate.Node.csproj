@@ -69,8 +69,6 @@
     <None Include="content\App_Build\node.targets">
       <SubType>Designer</SubType>
     </None>
-    <None Include="content\node.cmd" />
-    <None Include="content\npm.cmd" />
     <None Include="Ncapsulate.Node.nuspec" />
     <None Include="build\Ncapsulate.Node.targets">
       <SubType>Designer</SubType>
@@ -83,7 +81,9 @@
     </None>
     <None Include="tools\uninstall.ps1" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="readme.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
