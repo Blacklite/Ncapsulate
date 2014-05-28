@@ -61,8 +61,8 @@ namespace Ncapsulate.Node.Tasks
                 // Always want to package the latest version, the nupkg will be based on the current node version
                 Log.LogMessage(MessageImportance.High, "Downloading nodejs ...");
 
-                return Task.FromResult<object>(null);
-                //return new WebClient().DownloadFileTaskAsync("http://nodejs.org/dist/latest/node.exe", @"nodejs\node.exe");
+                //return Task.FromResult<object>(null);
+                return new WebClient().DownloadFileTaskAsync("http://nodejs.org/dist/latest/node.exe", @"nodejs\node.exe");
             }
             Log.LogMessage(MessageImportance.High, "Downloading nodejs ...");
             return new WebClient().DownloadFileTaskAsync("http://nodejs.org/dist/latest/node.exe", @"nodejs\node.exe");
