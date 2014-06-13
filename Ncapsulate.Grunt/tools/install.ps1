@@ -24,8 +24,7 @@ $nodeRelativePath
 
 <# Install grunt.cmd #>
 $gruntCmd = "@echo off
-$nodeRelativePath\nodejs\node $gruntRelativePath\nodejs\node_modules\grunt-cli\bin\grunt --no-color %*
-@echo on";
+$nodeRelativePath\nodejs\node $gruntRelativePath\nodejs\node_modules\grunt-cli\bin\grunt --no-color %*";
 $gruntLocation = ($projectDirectory + '\grunt.cmd')
 Set-Content $gruntLocation $gruntCmd -Encoding String
 
