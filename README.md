@@ -68,7 +68,7 @@ control__, so that they exist for the tooling to work correctly.
 You will also have a new folder `App_Build`, this folder will contain `.targets` files
 for each dependnency you have installed.  These can be removed safely if you do not need them.
 
-Targets are very useful though, these allow you to change the your projects build without needing
+Targets are very useful though, these allow you to change your projects build without needing
 to manually edit the project xml, which forces you to unload the project.  In these targets files
 we have some examples of using Inputs/Outputs to create incremental builds that only change
 as dependent files change.
@@ -140,7 +140,7 @@ This is a package that brings in grunt integration to Ncapsulate.
 
 ## Tasks 
 ### Grunt
-Allows you to run a specific grunt task as part of your build build process.  Tasks
+Allows you to run a specific grunt task as part of your build process.  Tasks
 are optional and will default to `default` just like calling grunt from the command
 line.
 
@@ -199,7 +199,7 @@ process is generally very similar per dependency so these are helper tasks that
 let you create a dependency with very little fuss.
 
 ### GetVersion
-Get's the version of the given npm dependency.
+Gets the version of the given npm dependency.
 
 #### Usage
 ```
