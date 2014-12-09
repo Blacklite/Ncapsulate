@@ -78,7 +78,7 @@ namespace Ncapsulate.Node.Tasks
 
             Log.LogMessage(MessageImportance.High, "Downloading npm ...");
 
-            var npmZip = await new WebClient().OpenReadTaskAsync("http://nodejs.org/dist/npm/npm-1.4.0.zip");
+            var npmZip = await new WebClient().OpenReadTaskAsync("http://nodejs.org/dist/npm/npm-1.4.9.zip");
 
             try
             {
