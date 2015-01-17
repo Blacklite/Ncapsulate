@@ -1,0 +1,10 @@
+version: 1.0.{build}
+build:
+  verbosity: minimal
+artifacts:
+- path: Ncapsulate*\*.nupkg
+deploy:
+- provider: NuGet
+  api_key:
+    secure: 3yqE6ans14y+09N4kca55IFCcVw7C+w5LXYzw7ItfAg4pu9Q8Iz2kaEO2w9sTzMy
+  skip_symbols: true
