@@ -29,8 +29,7 @@ namespace Ncapsulate.Node.Tasks
 
             var errorString = error.ToString().Trim();
             var outputString = output.ToString().Trim();
-
-            return result == 0 || String.IsNullOrWhiteSpace(errorString) ? outputString : ("ERROR:" + error.ToString().Trim());
+            return result == 0 ? outputString : ("ERROR:" + (String.IsNullOrEmpty(errorString) ? outputString : errorString ));
         }
 
         /// <summary>Invokes a command-line process asynchronously, capturing its output to a string.</summary>
