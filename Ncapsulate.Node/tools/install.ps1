@@ -19,7 +19,10 @@ Set-Content $nodeLocation $nodeCmd -Encoding String
 
 <# Install npm.cmd #>
 $npmCmd = "@echo off
+setlocal
+set PATH=%~dp0$relativePath\nodejs;%PATH%
 $relativePath\nodejs\npm %*
+endlocal
 @echo on";
 $npmLocation = ($projectDirectory + '\npm.cmd')
 Set-Content $npmLocation $npmCmd -Encoding String
