@@ -6,7 +6,7 @@
     <NpmJson Include="$(MSBuildProjectDirectory)\package.json" />
     <NpmLastRun Include="$(MSBuildProjectDirectory)\node_modules\npm.lastrun" />
   </ItemGroup>
-  <Target Name="Npm" BeforeTargets="BeforeBuild" Inputs="@(NpmJson)" Outputs="@(NpmLastRun)">
+  <Target Name="Npm" Condition="Exists('$(MSBuildProjectDirectory)\package.json')" BeforeTargets="BeforeBuild" Inputs="@(NpmJson)" Outputs="@(NpmLastRun)">
     <NpmInstall />
     <NpmUpdate />
     <MakeDir Directories="$(MSBuildProjectDirectory)\node_modules" />
