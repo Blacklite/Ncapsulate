@@ -54,7 +54,7 @@ namespace Ncapsulate.Gulp.Tasks
 
             var output = Task.WhenAll(ExecWithOutputResultAsync(@"cmd", cmd)).Result.FirstOrDefault();
 
-            if (output.StartsWith("ERROR"))
+            if (output.ToUpper().Contains("ERROR"))
             {
                 this.Log.LogError("gulp run - error: " + output);
                 return false;
